@@ -1,0 +1,1 @@
+helper-repack-iso-create-workdir() { mkdir -p "$1/iso-master" "$1/unattend" "$1/wimmount" "$1/drivers" "$1/tmp" "$1/virtio" "$1/injectedfolders" "$1/addedfolders"; }

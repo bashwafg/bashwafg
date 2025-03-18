@@ -1,0 +1,1 @@
+get_iso_paths() { while read -r s; do awk -v s="$s" '$1 == "dir:" && $2 == s {f=1; next} f && $1 == "path" {print $2 "/template/iso"; f=0} f && /^dir:|lvmthin:/ {f=0}' /etc/pve/storage.cfg; done < <(get_storage_id_dir_with_iso); }

@@ -1,0 +1,1 @@
+windows-shell-setup-clear-logoncommands(){ unset logoncommandarr_ubound; local i=0; while [[ -n "$(eval echo "\${logoncommandarr_${i}_commandline+set}")" ]]; do unset logoncommandarr_${i}_commandline logoncommandarr_${i}_description logoncommandarr_${i}_order; ((i++)); done; }

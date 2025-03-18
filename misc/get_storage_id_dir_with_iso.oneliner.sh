@@ -1,0 +1,1 @@
+get_storage_id_dir_with_iso() { pvesm status --content iso | awk '$2 == "dir" {print $1}'; }

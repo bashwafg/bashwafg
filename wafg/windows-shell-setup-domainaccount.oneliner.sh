@@ -1,0 +1,1 @@
+windows-shell-setup-domainaccount() { local name="" group="Users"; while [[ $# -gt 0 ]]; do case "$1" in Name) shift; name="$1";; Group) shift; group="$1";; esac; shift; done; [[ -z "$name" ]] && return; echo -e "\t\t\t\t\t<DomainAccount wcm:action=\"add\">\n\t\t\t\t\t\t<Name>$name</Name>\n\t\t\t\t\t\t<Group>$group</Group>\n\t\t\t\t\t</DomainAccount>"; }

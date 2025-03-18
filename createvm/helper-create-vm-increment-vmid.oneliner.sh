@@ -1,0 +1,1 @@
+helper-create-vm-increment-vmid() { : ${VM_ID:=666}; VM_ID=$((VM_ID < 100 ? 100 : VM_ID)); existing_ids=$(qm list | awk 'NR>1 {print $1}' | sort -n); while echo "$existing_ids" | grep -qw "$VM_ID"; do VM_ID=$((VM_ID + 1)); done; }

@@ -1,0 +1,1 @@
+helper-repack-iso-unpack-sourceiso() { [[ -d "$2" && -n "$(ls -A "$2/iso-master" 2>/dev/null)" ]] && echo "Skipping ISO unpack: '$2' is not empty." || { helper-repack-iso-unpack "$1" "$2/tmp/$(basename "$1")" "$2/iso-master" || return 1; echo "ISO successfully extracted to $2"; }; }

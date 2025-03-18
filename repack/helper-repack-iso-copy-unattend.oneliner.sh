@@ -1,0 +1,1 @@
+helper-repack-iso-copy-unattend() { local src="${2:-$(ls -t "$1"/* 2>/dev/null | head -n 1)}"; [ -f "$src" ] && cp "$src" "${1%/}/autounattend.xml" && echo "Copied: $src → ${1%/}/autounattend.xml" || echo "No unattend file found."; }

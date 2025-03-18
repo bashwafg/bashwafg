@@ -1,0 +1,1 @@
+find_iso_storage_for_file() { local filename="$1"; while read -r storage; do path=$(get_iso_path "$storage") && [[ -f "$path/$filename" ]] && echo "$storage" && return 0; done < <(get_storage_id_dir_with_iso); return 1; }

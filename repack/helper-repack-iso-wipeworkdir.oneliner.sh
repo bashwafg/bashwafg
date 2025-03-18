@@ -1,0 +1,1 @@
+helper-repack-iso-wipeworkdir() { [[ -d "$1" ]] && helper-repack-iso-unmount "$1" && { [[ -n "$autowipe_flag" ]] || { echo "Are you sure you want to delete all files in '$1'? (y/N)"; read -r confirm; [[ "$confirm" == [yY] ]]; }; } && rm -r --one-file-system "$1"/* || echo "Skipping workdir wipe."; }

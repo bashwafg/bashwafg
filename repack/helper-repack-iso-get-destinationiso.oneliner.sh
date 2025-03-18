@@ -1,0 +1,1 @@
+helper-repack-iso-get-destinationiso() { [[ -z "$1" ]] && { echo "Error: No destination ISO provided."; return 1; }; destinationiso=$([[ "$1" == /* ]] && echo "$1" || echo "$(dirname "$sourceiso")/$1"); [[ "$sourceiso" == "$destinationiso" ]] && { echo "Error: Destination ISO cannot be the same as Source ISO."; return 1; }; shift 1; }

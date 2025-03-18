@@ -1,0 +1,1 @@
+windows-shell-setup-clear-firstlogoncommands(){ unset firstcommandarr_ubound; local i=0; while [[ -n "$(eval echo "\${firstcommandarr_${i}_commandline+set}")" ]]; do unset firstcommandarr_${i}_commandline firstcommandarr_${i}_description firstcommandarr_${i}_requiresinput firstcommandarr_${i}_order; ((i++)); done; }

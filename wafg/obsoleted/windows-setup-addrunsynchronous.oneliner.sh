@@ -1,0 +1,1 @@
+windows-setup-addrunsynchronous() { local args=(); printf '\t\t\t<RunSynchronous>\n'; while [[ $# -gt 0 ]]; do case "$1" in addcommand) [[ ${#args[@]} -gt 0 ]] && windows-setup-runsynchronous "${args[@]}"; args=(); shift ;; *) args+=("$1"); shift ;; esac; done; [[ ${#args[@]} -gt 0 ]] && windows-setup-runsynchronous "${args[@]}"; printf '\t\t\t</RunSynchronous>\n'; }

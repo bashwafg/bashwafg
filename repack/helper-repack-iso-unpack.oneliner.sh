@@ -1,0 +1,1 @@
+helper-repack-iso-unpack() { [[ -z "$1" || -z "$2" ]] && { echo "Error: Missing required arguments."; return 1; }; mkdir -p "$2"; mount -o loop "$1" "$2" || { echo "Error: Failed to mount '$1'."; return 1; }; [[ -n "$3" ]] && { mkdir -p "$3"; cp -a "$2/." "$3/" || { echo "Error: Failed to copy files to '$3'."; umount "$2"; return 1; }; umount "$2"; }; }
